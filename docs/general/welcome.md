@@ -1,103 +1,231 @@
+# ❔ reconlx
+A simple api to configure and enhance the ways on coding your discord bot. Compatible with discord.js v12 but it should also work on older versions. Variety of different usages for this api.
 <div align="center">
-  <br />
   <p>
-    <a href="https://discord.js.org"><img src="/static/logo.svg" width="546" alt="discord.js" id="djs-logo" /></a>
-  </p>
-  <br />
-  <p>
-    <a href="https://discord.gg/bRCvFy9"><img src="https://img.shields.io/discord/222078108977594368?color=7289da&logo=discord&logoColor=white" alt="Discord server" /></a>
-    <a href="https://www.npmjs.com/package/discord.js"><img src="https://img.shields.io/npm/v/discord.js.svg?maxAge=3600" alt="NPM version" /></a>
-    <a href="https://www.npmjs.com/package/discord.js"><img src="https://img.shields.io/npm/dt/discord.js.svg?maxAge=3600" alt="NPM downloads" /></a>
-    <a href="https://travis-ci.org/discordjs/discord.js"><img src="https://travis-ci.org/discordjs/discord.js.svg" alt="Build status" /></a>
-    <a href="https://david-dm.org/discordjs/discord.js"><img src="https://img.shields.io/david/discordjs/discord.js.svg?maxAge=3600" alt="Dependencies" /></a>
-    <a href="https://www.patreon.com/discordjs"><img src="https://img.shields.io/badge/donate-patreon-F96854.svg" alt="Patreon" /></a>
-  </p>
-  <p>
-    <a href="https://nodei.co/npm/discord.js/"><img src="https://nodei.co/npm/discord.js.png?downloads=true&stars=true" alt="NPM info" /></a>
+    <a href="https://nodei.co/npm/reconlx
+/"><img src="https://nodei.co/npm/reconlx.png?downloads=true&stars=true" alt="NPM info" /></a>
   </p>
 </div>
 
-# Welcome!
 
-Welcome to the discord.js v12 documentation.
+---
 
-## About
+# 📝 Table of contents
++ [Installation](https://www.npmjs.com/package/reconlx#installation)
++ [Usages](https://www.npmjs.com/package/reconlx#-usages-click-on-it-for-more-info-on-how-to-use-it)
++ [Importing](https://www.npmjs.com/package/reconlx#-importing)
++ [Support](https://www.npmjs.com/package/reconlx#%E2%99%82%EF%B8%8F-support)
++ [License](https://apache.org/licenses/LICENSE-2.0.html)
 
-discord.js is a powerful [Node.js](https://nodejs.org) module that allows you to easily interact with the
-[Discord API](https://discord.com/developers/docs/intro).
-
-- Object-oriented
-- Predictable abstractions
-- Performant
-- 100% coverage of the Discord API
+---
 
 ## Installation
 
-**Node.js 12.0.0 or newer is required.**  
-Ignore any warnings about unmet peer dependencies, as they're all optional.
+First install [Node.js](http://nodejs.org/). Then:
 
-Without voice support: `npm install discord.js`  
-With voice support ([@discordjs/opus](https://www.npmjs.com/package/@discordjs/opus)): `npm install discord.js @discordjs/opus`  
-With voice support ([opusscript](https://www.npmjs.com/package/opusscript)): `npm install discord.js opusscript`
+```sh
+$ npm install reconlx
+```
+## 🛠 Usages (Click on it for more info on how to use it)
++ [reconDB](https://www.npmjs.com/package/reconlx#recondb) - simple way to store data into mongodb
++ [DaysAgo](https://www.npmjs.com/package/reconlx#daysago) - check how many days ago was it using date format
++ [EmbedPages](https://www.npmjs.com/package/reconlx#embedpages) - simple pagination to make your "MessageEmbed" interactable.
++ [Confirmation](https://www.npmjs.com/package/reconlx#confirmation) - A reaction collector which returns the first emoji collected, can be used as a confirmation prompt.
++ [fetchTranscript](https://www.npmjs.com/package/reconlx#fetchtranscript) - Specify an amount of messages and it will return a discord chat template with messages, acts like a transcript.
++ [timeout](https://www.npmjs.com/package/reconlx#timeout) - Makes it easier to delete messages according to your needs
 
-### Audio engines
+## ✈ Importing
 
-The preferred audio engine is @discordjs/opus, as it performs significantly better than opusscript. When both are available, discord.js will automatically choose @discordjs/opus.
-Using opusscript is only recommended for development environments where @discordjs/opus is tough to get working.
-For production bots, using @discordjs/opus should be considered a necessity, especially if they're going to be running on multiple servers.
+```javascript
+// Using Node.js `require()`
+const recon = require('reconlx');
 
-### Optional packages
-
-- [zlib-sync](https://www.npmjs.com/package/zlib-sync) for WebSocket data compression and inflation (`npm install zlib-sync`)
-- [erlpack](https://github.com/discord/erlpack) for significantly faster WebSocket data (de)serialisation (`npm install discord/erlpack`)
-- One of the following packages can be installed for faster voice packet encryption and decryption:
-  - [sodium](https://www.npmjs.com/package/sodium) (`npm install sodium`)
-  - [libsodium.js](https://www.npmjs.com/package/libsodium-wrappers) (`npm install libsodium-wrappers`)
-- [bufferutil](https://www.npmjs.com/package/bufferutil) for a much faster WebSocket connection (`npm install bufferutil`)
-- [utf-8-validate](https://www.npmjs.com/package/utf-8-validate) in combination with `bufferutil` for much faster WebSocket processing (`npm install utf-8-validate`)
-
-## Example usage
-
-```js
-const Discord = require('discord.js');
-const client = new Discord.Client();
-
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
-
-client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('pong');
-  }
-});
-
-client.login('token');
+// Using ES6 imports
+import recon from 'reconlx';
 ```
 
-## Links
+## 🙋‍♂️ Support
+Feel free to join the support discord server -> https://discord.gg/xCCpfth
 
-- [Website](https://discord.js.org/) ([source](https://github.com/discordjs/website))
-- [Documentation](https://discord.js.org/#/docs/main/master/general/welcome)
-- [Guide](https://discordjs.guide/) ([source](https://github.com/discordjs/guide)) - this is still for stable  
-  See also the WIP [Update Guide](https://discordjs.guide/additional-info/changes-in-v12.html) also including updated and removed items in the library.
-- [Discord.js Discord server](https://discord.gg/bRCvFy9)
-- [Discord API Discord server](https://discord.gg/discord-api)
-- [GitHub](https://github.com/discordjs/discord.js)
-- [NPM](https://www.npmjs.com/package/discord.js)
-- [Related libraries](https://discordapi.com/unofficial/libs.html)
+---
+## 🔧 Usages
 
-### Extensions
+---
 
-- [RPC](https://www.npmjs.com/package/discord-rpc) ([source](https://github.com/discordjs/RPC))
+## DaysAgo
 
-## Contributing
+```javascript
+// Example on checking how long the member's account was created.
+// Import the package
+const recon = require('reconlx')
+// Destructure the package
+const daysAgo = recon.daysAgo
+const discord = require('discord.js')
 
-Before creating an issue, please ensure that it hasn't already been reported/suggested, and double-check the
-[documentation](https://discord.js.org/#/docs).  
-See [the contribution guide](https://github.com/discordjs/discord.js/blob/master/.github/CONTRIBUTING.md) if you'd like to submit a PR.
+client.on('guildMemberAdd', async(member) => {
+    console.log(daysAgo(member.user.createdAt)) // return days.
+})
+```
 
-## Help
+## EmbedPages
+#### Example : 
+```js
+// Example on checking how long the member's account was created.
+// Import the package
+const recon = require('reconlx')
+// Destructure the package
+const EmbedPages = recon.EmbedPages
+// Use either MessageEmbed or RichEmbed to make pages
+// Keep in mind that Embeds should't have their footers set since the pagination method sets page info there
+const { MessageEmbed } = require('discord.js');
+const embed1 = new MessageEmbed().setTitle('1')
+const embed2 = new MessageEmbed().setTitle('2')
+// Create an array of embeds.
+const pages = [
+    embed1,
+    embed2
+]
+// Create an emojilist, first emoji being page back and second emoji being page front. Defaults are set to  ['⏪', '⏩'].
+const emojis = [
+    "⏪",
+    "⏩"
+]
+// Define a time in ms, defaults are set to 60000ms which is 60 seconds. Time on how long you want the embed to be interactable
+const time = 30000
+// Call the EmbedPages method, use the <message> parameter to initialize it.
+EmbedPages(msg, pages, emojis, time);
+//There you go, now you have embed pages.
+```
+#### Preview on a music list : 
+![preview](https://imgur.com/wduFcGP.png)
 
-If you don't understand something in the documentation, you are experiencing problems, or you just need a gentle
-nudge in the right direction, please don't hesitate to join our official [Discord.js Server](https://discord.gg/bRCvFy9).
+---
+
+## confirmation
+```js
+// destructure the package
+const { confirmation } = require('reconlx')
+// Here is an example on using it in banning members.
+message.channel.send('Confirmation for banning members').then(async msg => {
+  // parameters used(which msg to react on, who can acess it, reactions, time(optional))
+  const emoji = confirmation(msg, message.author, ['✅', '❌'], 30000)
+  if(emoji === '✅') { //if author reacts on check
+    //delete the confirmation message
+    msg.delete()
+    //ban the member
+    guildMember.ban()
+  } 
+  if(emoji === '❌') { // if author reacts on cross
+  // delete the confirmation message
+    msg.delete()
+  }
+})
+```
+---
+
+## fetchTranscript
+```js
+// destructure the package
+const { fetchTransript } = require('reconlx')
+
+// here is how you use it
+
+// template
+// fetchTranscript(message: any, numberOfMessages: number, sendToAuthor: boolean)
+
+//example
+module.exports = {
+  name : 'transcript',
+  run : async(client, message) => {
+    fetchTranscript(message, 5, true)
+  }
+}
+// it will fetch 10 messages in {message} channel and the transcript will be sent to the author
+```
+### Preview on a general chat
+![preview](https://i.imgur.com/CB1a6eD.png)
+
+---
+
+## timeout
+```js
+// destructure the package
+const { timeout } = require('reconlx')
+
+// example
+
+const messageToDelete = await message.channel.send('Hello There 👋')
+
+// using the method
+// template => timeout(message: who can acess, msgToDelete: which message to delete,time: time before the emoji gets deleted)
+timeout(message, messageToDelete, 5000) // only message.author can areact, messageToDelete is going to deleted if collected reactions, if no reactions after 5 seconds the reaction will be removed.
+```
+
+### Preview
+
+![preview](https://i.imgur.com/EV8WZja.gif)
+
+
+---
+---
+---
+
+# reconDB
+## 1. Importing the package
+
+```js
+const { reconDB } = require('reconlx')
+// or
+import { reconDB } from 'reconlx'
+```
+
+## 2. Establishing and exporting reconDB
+
+```js
+const db = new reconDB({
+  uri : "your mongodb connection string"
+})
+
+module.exports = db;
+```
+
+## 3. Example on using it
+
+```js
+const db = require('./db.js') // replace db.js with your file path to the setup of reconDB
+
+db.set('numbers', '123')
+```
+
+## Methods
+
+### .set
+
+```js
+// saves data to database
+db.set('key', 'value')
+```
+
+### .get
+
+```js
+// gets value from key
+db.get('key') // returns => value
+```
+
+### .has
+
+```js
+// returns boolean
+db.has('key') // returns => true
+```
+
+### .delete
+
+```js
+// deletes data
+db.delete('key')
+
+// checking for data
+db.has('key') // returns => false
+```
